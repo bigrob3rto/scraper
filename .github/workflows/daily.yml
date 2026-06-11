@@ -27,12 +27,6 @@ jobs:
       - name: Run scraper
         run: node app.js
         env:
-          USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-          BASE_URL: ${{ secrets.BASE_URL }}
-          GOOGLE_FILE_ID: ${{ secrets.GOOGLE_FILE_ID }}
-          CRON_SECRET: ${{ secrets.CRON_SECRET }}
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           GOOGLE_TOKEN: ${{ secrets.GOOGLE_TOKEN }}
-          GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
           
