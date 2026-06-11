@@ -54,6 +54,7 @@ async function scrape(day) {
     console.log("Request Started");
 
     // load file xlsx from drive
+    console.log("ENV FILE ID:", process.env.GOOGLE_FILE_ID);
     const workbookBuffer = await loadWorkbookFromDrive(process.env.GOOGLE_FILE_ID);
     await init_excel(workbookBuffer);
 
