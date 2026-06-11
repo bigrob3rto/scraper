@@ -1,0 +1,33 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "web scraper",
+  "license": "ISC",
+  "author": "Roberto",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "build": "npm run custom-build-step",
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@google-cloud/local-auth": "^3.0.1",
+    "axios": "^1.16.0",
+    "axios-cookiejar-support": "^6.0.5",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "exceljs": "^4.4.0",
+    "express": "^5.2.1",
+    "googleapis": "^172.0.0",
+    "jsdom": "^28.1.0",
+    "nodemon": "^3.1.14",
+    "playwright": "^1.59.1",
+    "qs": "^6.15.1",
+    "tough-cookie": "^6.0.1",
+    "ts-web-scraper": "^0.1.1"
+  },
+  "keywords": []
+}

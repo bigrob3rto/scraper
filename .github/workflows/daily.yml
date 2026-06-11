@@ -1,0 +1,35 @@
+name: Daily Scraper
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npx playwright install chromium
+
+      - name: Run scraper
+        run: node app.js
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          BASE_URL: ${{ secrets.BASE_URL }}
+          GOOGLE_FILE_ID: ${{ secrets.GOOGLE_FILE_ID }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          
