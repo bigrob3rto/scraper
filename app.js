@@ -19,7 +19,7 @@ process.exit(0);
 async function daily(){
 
     const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate());
+    yesterday.setDate(yesterday.getDate()-1);
 
     const day = yesterday.toISOString().slice(0, 10);
     //const result = await scrape(day); // sync call (attendi completamento)
